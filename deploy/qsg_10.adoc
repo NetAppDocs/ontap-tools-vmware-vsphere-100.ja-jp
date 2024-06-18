@@ -1,0 +1,112 @@
+---
+sidebar: sidebar 
+permalink: deploy/qsg_10.html 
+keywords: QSG, ONTAP tools for VMware vSphere, Quick start guide, Installing 
+summary: VMware vSphere 用の ONTAP ツールを導入して初期化する手順について説明します。 
+---
+= VMware vSphere クイックスタート用の ONTAP ツール
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Tools for VMware vSphereはvCenter Serverプラグインで、ONTAPツールとVASA Provider拡張機能が含まれています。ベストプラクティスに基づいてESXiホストの設定とONTAPストレージのプロビジョニングが行われるため、すべてのONTAP vSphere環境でONTAPツールを使用することを推奨します。VASA Providerは、仮想ボリューム（VVOL）をサポートするために必要です。
+
+
+
+== 設置を準備しています
+
+このプラグインを仮想アプライアンスとして導入することで、各製品を別々にインストールして vCenter Server に登録する手間を減らすことができます。
+
+
+
+=== 導入の要件
+
+ONTAP tools for VMware vSphereを導入する前に、導入パッケージのスペース要件とホストシステムのいくつかの基本的な要件を理解しておく必要があります。
+
+ONTAPツールは、Windows vCenter ServerまたはVMware vCenter Server VirtualAppliance（vCSA）で使用できます。ESXiシステムを含むサポートされているvSphereにONTAP toolsを導入する必要があります。
+
+* *ノードあたりのインストールパッケージのスペース要件*
++
+** シンプロビジョニング環境の場合は10GB
+** シックプロビジョニングの場合は200GB
+
+
+* *ノードあたりのホストシステムのサイジング要件*
+次の表に、導入サイズおよびノードごとの推奨メモリを示します。
+
+
+|===
+
+
+| 導入のタイプ | CPU | メモリ（GB） 
+
+
+| 小（S） | 8 | 16 
+
+
+| 中（M） | 12 | 24 
+
+
+| 大（L） | 16 | 32だ 
+|===
+
+
+== ストレージとアプリケーションの最小要件：
+
+|===
+| ストレージ、ホスト、およびアプリケーション | バージョン要件 
+
+
+| ONTAP | ONTAP 9.10.1、9.11、9.12、9.13 
+
+
+| VMware vSphere の場合 | サポートされるVMwareの最小バージョンは7.0.3です。 
+
+
+| ESXiホスト | ESXi 7.0.3以降のバージョン 
+
+
+| vCenterサーバ | vCenter 7.0.3 
+
+
+| VASA Provider | 3.0 
+
+
+| OVAアプリケーション | 10.0 
+|===
+詳細については、を参照してください link:../deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html["ONTAP ツールを導入するための要件"]
+
+
+
+=== ONTAP ツールの要件
+
+* vCenter Server 環境を設定およびセットアップします。
+* .ova ファイルをダウンロードします。
+* vCenter Server インスタンスのログインクレデンシャルを用意します。
+* ブラウザキャッシュを削除して、 ONTAP ツールの導入時にブラウザキャッシュの問題が発生しないようにします。
+* 仮想アプライアンスが ICMP ping に応答するために使用するデフォルトゲートウェイを設定します。
+* 仮想アプライアンスの有効な DNS ホスト名。
+
+
+
+
+== ONTAP ツールの導入
+
+.手順
+. ダウンロード `.zip` のバイナリと署名済み証明書を含むファイル https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp Support Site"^] から vSphere Client システムにアップロードして、 ONTAP ツールを導入できます。
+. を展開します `.zip` ファイルを作成してを導入します `.ova` ファイル。
+. vSphereサーバにログインします。
+. OVAを導入するリソースプールまたはホストに移動します。
+. 目的のデータセンターを右クリックし、*[Deploy OVF template...]*を選択します。
+. .ovaファイルのURLを入力するか、.ovaファイルが保存されているフォルダを参照して、*[次へ]*を選択します。
+. 必要な詳細を入力して導入を完了します。
+
+
+導入の進捗状況は[Tasks]タブで確認でき、導入が完了するまで待ちます。

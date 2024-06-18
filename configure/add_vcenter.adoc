@@ -1,0 +1,27 @@
+---
+permalink: configure/add_vcenter.html 
+sidebar: sidebar 
+keywords:  
+summary: vCenterは、ホスト、仮想マシン（VM）、およびストレージバックエンドを制御できる一元管理プラットフォームです。 
+---
+= vCenterの追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vCenterは、ホスト、仮想マシン（VM）、およびストレージバックエンドを制御できる一元管理プラットフォームです。
+
+* このタスクについて *
+
+VMware vCenter 10.0向けONTAPツールの1つのインスタンスを使用して、複数のvCenterを追加および管理できます。
+
+* 手順 *
+
+. を起動します `\https://loadBalanceIP:8443/virtualization/ui/` 導入時に指定したONTAP tools管理者のクレデンシャルをブラウザから使用
+. サイドバーから[vCenters]を選択します。
+. vCenterのIPアドレス/ホスト名、ユーザ名、パスワード、およびポートを持つオンボードvCenterに* add *を選択します。
+
+
+を参照してください link:../configure/task_configure_user_role_and_privileges.html["管理者以外のグローバルを対象としたクラスタユーザに必要な最小権限のリスト"]。

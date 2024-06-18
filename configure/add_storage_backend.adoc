@@ -1,0 +1,30 @@
+---
+permalink: configure/add_storage_backend.html 
+sidebar: sidebar 
+keywords:  
+summary: ストレージバックエンドは、EXSiホストがデータストレージに使用するシステムです。 
+---
+= ストレージバックエンドの追加
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ストレージバックエンドは、EXSiホストがデータストレージに使用するシステムです。
+
+* このタスクについて *
+
+このタスクは、ONTAPクラスタのバインドに役立ちます。
+
+* 手順 *
+
+. を起動します `\https://loadBalanceIP:8443/virtualization/ui/` 導入時に指定したONTAP tools管理者のクレデンシャルをブラウザから使用
+. サイドバーから* Storage backends *を選択します。
+. 「 * 追加」を選択します。
+. サーバのIPアドレスまたはFQDN、ユーザ名、およびパスワードの詳細を入力し、*[追加]*を選択します。
++
+
+NOTE: IPv4管理LIFのみがサポートされます。
+
+

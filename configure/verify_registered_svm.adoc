@@ -1,0 +1,23 @@
+---
+permalink: configure/verify_registered_svm.html 
+sidebar: sidebar 
+keywords:  
+summary: オンボードしたSVMがvCenter UIのVASA Providerの下に表示されていることを確認します。 
+---
+= 登録したSVMの確認
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+オンボードしたSVMがvCenter UIのVASA Providerの下に表示されていることを確認します。
+
+* 手順 *
+
+. vCenter Serverに移動します。
+. 管理者のクレデンシャルでログインします。
+. [ストレージプロバイダ]*を選択します。
+. 「 * Configure * 」を選択します。
+. [Storage Provider/storage backends]で、オンボードしたSVMが正しく表示されていることを確認します。
+

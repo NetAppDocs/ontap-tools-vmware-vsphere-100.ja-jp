@@ -1,0 +1,118 @@
+---
+permalink: manage/manage_vcenter.html 
+sidebar: sidebar 
+keywords:  
+summary: vCenterは、ホスト、仮想マシン、およびストレージバックエンドを制御できる一元管理プラットフォームです。 
+---
+= vCenterの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vCenterは、ホスト、仮想マシン、およびストレージバックエンドを制御できる一元管理プラットフォームです。
+
+
+
+== vCenterの追加
+
+VMware vCenter 10.0向けONTAPツールの1つのインスタンスを使用して、複数のvCenterを追加および管理できます。
+
+* 手順 *
+
+. を起動します `\https://loadBalanceIP:8443/virtualization/ui/` 導入時に指定したONTAP tools管理者のクレデンシャルをブラウザから使用
+. サイドバーから[vCenters]を選択します。
+. vCenterのIPアドレス/ホスト名、ユーザ名、パスワード、およびポートを持つオンボードvCenterに* add *を選択します。
+. ストレージバックエンド*ページに移動し、*[ホスト名、ユーザ名、パスワード、およびポートを指定してオンボードストレージバックエンド*（ONTAPクラスタ）に追加する]を選択します。
+
+
+を参照してください link:../configure/task_configure_user_role_and_privileges.html["管理者以外のグローバルを対象としたクラスタユーザに必要な最小権限のリスト"]。
+
+
+
+== vCenterへのストレージバックエンドの関連付けまたは関連付け解除
+
+vCenterのリストページに、関連付けられているストレージバックエンドの数が表示されます。各vCenterでストレージバックエンドの関連付けまたは関連付け解除を選択可能
+このタスクでは、ストレージバックエンドとオンボードされたvCenterの間のマッピングをグローバルに作成できます。
+
+* 手順 *
+
+. を起動します `\https://loadBalanceIP:8443/virtualization/ui/` 導入時に指定したONTAP tools管理者のクレデンシャルをブラウザから使用
+. サイドバーから[vCenters]を選択します。
+. ストレージバックエンドに関連付ける、またはストレージバックエンドとの関連付けを解除するvCenterの縦の省略記号をクリックします。
+. 実行するアクションに応じて*[ストレージバックエンドの関連付け]または[関連付け解除]*を選択します。
++
+を参照してください link:../configure/task_configure_user_role_and_privileges.html["管理者以外のグローバルを対象としたクラスタユーザに必要な最小権限のリスト"]。
+
+
+
+
+
+== vCenterの変更
+
+vCenterを変更するには、次の手順に従います。
+
+. を起動します `\https://loadBalanceIP:8443/virtualization/ui/` 導入時に指定したONTAP tools管理者のクレデンシャルをブラウザから使用
+. サイドバーから[vCenters]を選択します。
+. 変更するvCenterの縦の省略記号をクリックし、*[変更]*を選択します。
+. vCenterの詳細を変更し、*[変更]*を選択します。
+
+
+
+
+== vCenterの削除
+
+vCenterを削除する前に、vCenterに接続されているすべてのストレージバックエンドを削除する必要があります。
+
+. を起動します `\https://loadBalanceIP:8443/virtualization/ui/` 導入時に指定したONTAP tools管理者のクレデンシャルをブラウザから使用
+. サイドバーから[vCenters]を選択します。
+. 削除するvCenterの縦の省略記号をクリックし、*[Remove]*を選択します。
++
+
+NOTE: 削除したvCenterはアプリケーションで管理されなくなります。
+
+
+
+
+
+== ストレージしきい値の管理
+
+次のGETしきい値APIを使用して、ボリュームおよびアグリゲートに設定されているストレージしきい値の制限を取得します。
+
+[listing]
+----
+GET​/virtualization​/api​/v1​/vcenters​/{vcguid}​/storage-thresholds
+----
+例
+vCenter GUIDによるvCenterごとのストレージしきい値の取得
+
+[listing]
+----
+GET "/api/v1/vcenters/beded9ad-6bbb-4c9e-b4c6-691250bfe2da/storage-thresholds"
+----
+次のパッチ設定アラームをボリュームとアグリゲートに対して使用して、設定したしきい値に達したときに通知を生成します。
+
+[listing]
+----
+PATCH​/virtualization​/api​/v1​/vcenters​/{vcguid}​/storage-thresholds
+----
+例
+vCenter GUIDを使用して、vCenterごとのストレージしきい値を更新します。デフォルトの制限は、「ほぼフル」が80%、「フル」が90%です。
+すべてのしきい値設定の変更
+
+[listing]
+----
+{{{}PATCH "/api/v1/vcenters/beded9ad-6bbb-4c9e-b4c6-691250bfe2da/storage-thresholds"
+Request Body
+{
+"volume":
+
+{ "nearly_full_percent": 80, "full_percent": 90 }
+,
+"aggregate": {
+"nearly_full_percent": 80,
+"full_percent": 90
+}
+}{}}}{}
+----

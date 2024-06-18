@@ -1,0 +1,39 @@
+---
+permalink: configure/register_vasa.html 
+sidebar: sidebar 
+keywords:  
+summary: 自己署名証明書またはCA署名証明書を使用してVASA ProviderをvCenterに登録できます。自己署名証明書は、VMware CAハンドシェイクを使用して生成されます。 
+---
+= VASA ProviderをvCenterに登録
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+自己署名証明書またはCA署名証明書を使用してVASA ProviderをvCenterに登録できます。自己署名証明書は、VMware CAハンドシェイクを使用して生成されます。
+
+* このタスクについて *
+
+CA署名証明書を使用する場合は、CA署名証明書をvCenterに配置する必要があります。
+
+* 手順 *
+
+. vCenter Serverに移動します。
+. [設定]>*[ストレージプロバイダ]*を選択します。
+. [追加]*アイコンをクリックします。
+. ストレージプロバイダの接続情報を入力します。
++
+.. name：「ScaleoutVP」などのユーザフレンドリな名前
+.. URL： `\https://<name>/virtualization/version.xml` - URL内の名前は、単一vCenter環境の場合はOVA導入時に指定された仮想IP（または複数vCenter環境の場合はドメイン名）に対応します。証明書をURLに追加します。同じ証明書がvCenterに公開されます。
+.. OVAの導入時に入力されたクレデンシャル：<VASA Provider username>/<VASA Provider password>
+
+
+. VASAを登録したら、*[OK]*をクリックします。
+[Storage Provider]の下に表示され、ステータスが[Online]になっていることを確認します。
++
+CA署名証明書をvCenterに配置した場合は、CA署名証明書でVASAの登録が続行されます。そうしないと、ハンドシェイクが失敗し、登録のデフォルトはSSA証明書になります。
+
+. 複数のvCenterを1つのスケールアウトVPインスタンスに登録できます。
+上記の手順を繰り返して、複数のvCenterを登録します。
+

@@ -1,0 +1,18 @@
+---
+section: deploy
+title: ONTAP ツールを導入
+entries:
+- title: ONTAP ツールクイックスタート
+  url: "/deploy/qsg_10.html"
+- title: ONTAP ツールを導入するための要件
+  url: "/deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html"
+- title: ONTAP ツールのダウンロード方法
+  url: "/deploy/concept_how_to_download_ontap_tools.html"
+- title: 導入のチェックリスト
+  url: "/deploy/deployment_checklist.html"
+- title: ONTAP toolsの導入準備
+  url: "/deploy/prepare_deployment.html"
+- title: 非HAシングルノード構成の導入方法
+  url: "/deploy/nonha_deployment.html"
+- title: HA 3ノード構成の導入方法
+  url: "/deploy/ha_three_node.html"

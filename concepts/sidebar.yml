@@ -1,0 +1,18 @@
+---
+section: concepts
+title: 概念
+entries:
+- title: ONTAP ツールの概要
+  url: "/concepts/concept_ontap_tools_overview.html"
+- title: VVOL 向けの VASA Provider の設定
+  url: "/concepts/concept_configure_vvols_datastores.html"
+- title: ロールベースアクセス制御
+  entries:
+  - title: ONTAP toolsのロールベースアクセス制御の概要
+    url: "/concepts/concept_vcenter_server_role_based_access_control_features_in_vsc_for_vmware_vsphere.html"
+  - title: VMware vSphere 用の ONTAP ツールを使用する際に推奨される ONTAP ロール
+    url: "/concepts/concept_recommended_ontap_roles_when_using_vsc_for_vmware_vsphere.html"
+- title: ONTAP ツールのハイアベイラビリティを設定する
+  url: "/concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html"
+- title: AutoSupport
+  url: "/concepts/asup.html"

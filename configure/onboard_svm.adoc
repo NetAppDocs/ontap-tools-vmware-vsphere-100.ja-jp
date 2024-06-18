@@ -1,0 +1,34 @@
+---
+permalink: configure/onboard_svm.html 
+sidebar: sidebar 
+keywords:  
+summary: 次のAPIを使用してストレージバックエンドをオンボードし、SVMをvCenterにマッピングします。 
+---
+= vCenterを使用したオンボードストレージバックエンド（SVMまたはクラスタ）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+次のAPIを使用してストレージバックエンドをオンボードし、SVMをvCenterにローカルでマッピングします。  を参照してください link:../configure/task_configure_user_role_and_privileges.html["ユーザロールと権限を設定"] セクションを参照してくださいONTAP。
+
+[listing]
+----
+POST /virtualization/api/v1/vcenters/<vcguid>/storage-backends
+
+{
+     "hostname_or_ip": "172.21.103.107",
+     "username": "svm11",
+     "password": "xxxxxx"
+   }
+----
+
+NOTE: 上記のAPI応答のIDは検出で使用されます。
+
+APIにはx-authを渡す必要があります。このx-authは、SwaggerのAuthに追加された新しいAPIから生成できます。
+
+[listing]
+----
+/virtualization/api/v1/auth/vcenter-login
+----

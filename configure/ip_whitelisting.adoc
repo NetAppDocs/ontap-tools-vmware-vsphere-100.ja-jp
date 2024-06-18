@@ -1,0 +1,37 @@
+---
+permalink: configure/ip_whitelisting.html 
+sidebar: sidebar 
+keywords:  
+summary: この機能を使用すると、データストアのマウント処理に許可する特定のESXiホストアドレスを指定できます。 
+---
+= ネットワークアクセスの管理
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+この機能を使用すると、データストアのマウント処理に許可する特定のESXiホストアドレスを指定できます。
+
+ESXiホストに複数のIPアドレスがある場合は、検出されたホストのすべてのIPアドレスがエクスポートポリシーに追加されます。すべてのIPアドレスをエクスポートポリシーに追加しない場合は、ホワイトリストに登録されたIPアドレスを、カンマで区切ったリストまたは範囲またはCIDR、または3つすべての組み合わせでvCenterごとに指定します。
+
+設定を指定しない場合は、マウント前の手順で検出したすべてのIPアドレスがエクスポートポリシーによって追加されます。この設定が指定されている場合、ONTAP toolsはホワイトリストに登録されたIPまたは範囲内のIPのみを追加します。ホワイトリストに登録されたIPにホストのIPが1つも属していない場合、そのホストでのマウントは失敗します。
+
+デフォルトでは、すべてのホストIPがエクスポートポリシーに追加されます。
+
+次のAPIを使用して、ホワイトリストに追加するIPアドレスを指定します。
+
+[listing]
+----
+patch /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+
+GET /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+----

@@ -1,0 +1,31 @@
+---
+permalink: concepts/concept_ontap_tools_overview.html 
+sidebar: sidebar 
+keywords:  
+summary: ONTAP Tools for VMware vSphereは、NetAppストレージバックエンドを使用するVMware環境でのデータストアと仮想マシンのプロビジョニングを管理します。 
+---
+= ONTAP ツールの概要
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP Tools for VMware vSphereは、NetAppストレージバックエンドを使用するVMware環境でのデータストアと仮想マシンのプロビジョニングを管理します。管理者はvCenter Server内でストレージを直接管理できるため、VMware環境のストレージとデータの管理が簡易化されます。
+
+ONTAP Tools for VMware vSphere 10.0リリースは、水平方向に拡張可能なイベントベースの
+Open Virtual Appliance（OVA；オープン仮想アプライアンス）として導入されたマイクロサービス。オンプレミス向けのOpen Virtual Appliance（OVA；オープン仮想アプライアンス）やSoftware as a Service（SaaS）など、さまざまな導入フォームファクタでパッケージ化されています。
+
+ONTAP Tools for VMware vSphereは次のコンポーネントで構成されています。
+
+* 仮想マシンの機能
+* VM単位のVASAプロバイダ
+* ポリシーベースのストレージ管理
+
+
+
+
+== ONTAP Tools VASA Provider
+
+ONTAP tools VASA Providerは、仮想ボリューム（VVOL）の拡張性に関する高度な要件をサポートしています。NFSプロトコル、iSCSIプロトコル、OVA環境をサポートしています。
+VASA Provider for VMwareは、ONTAPを使用したVMware環境でライフサイクル管理を提供する製品です。

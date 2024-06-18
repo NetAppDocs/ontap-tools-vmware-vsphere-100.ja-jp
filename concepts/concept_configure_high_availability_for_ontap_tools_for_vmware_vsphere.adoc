@@ -1,0 +1,33 @@
+---
+permalink: concepts/concept_configure_high_availability_for_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords:  
+summary: ONTAP ツールはハイアベイラビリティ（ HA ）構成をサポートしており、障害時に ONTAP ツールが中断なく機能するようにします。 
+---
+= ONTAP ツールのハイアベイラビリティを設定する
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP ツールは、障害時に ONTAP ツールの機能を中断させないためのハイアベイラビリティ（ HA ）構成をサポートしています。
+
+ONTAP ツールは、 VMware vSphere のハイアベイラビリティ（ HA ）機能とフォールトトレランス（ FT ）機能を活用することで高可用性を実現します。ハイアベイラビリティ（ HA ）解決策は、以下のような理由で発生するシステム停止からの迅速なリカバリを可能にします。
+
+* ホスト障害です
++
+
+NOTE: 単一ノード障害のみがサポートされます。
+
+* ネットワーク障害
+* 仮想マシンの障害（ゲスト OS の障害）
+* アプリケーション（ ONTAP ツール）がクラッシュする
+
+
+高可用性を実現するために ONTAP ツールを使用する場合、追加の設定は必要ありません。要件に応じて、 vCenter Server ホストと ESXi ホストで VMware vSphere HA または vSphere FT を設定する必要があります。HA と FT のどちらにも、クラスタホストと共有ストレージが必要です。FT には追加の要件と制限事項があります。
+
+VMware vSphere HA 解決策および vSphere FT 解決策に加え、 ONTAP ツールを使用することで、 ONTAP Tools のサービスを常時実行できます。
+
+
+NOTE: vCenter HA は、 ONTAP ツールではサポートされていません。

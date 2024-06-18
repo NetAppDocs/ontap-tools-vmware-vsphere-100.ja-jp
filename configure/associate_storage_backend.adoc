@@ -1,0 +1,30 @@
+---
+permalink: configure/associate_storage_backend.html 
+sidebar: sidebar 
+keywords:  
+summary: 情報が必要です。 
+---
+= ストレージバックエンドとvCenterの関連付け
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+vCenterのリストページに、関連付けられているストレージバックエンドの数が表示されます。各vCenterには、ストレージバックエンドを関連付けるオプションがある
+
+* このタスクについて *
+
+このタスクでは、ストレージバックエンドとオンボードされたvCenterの間のマッピングをグローバルに作成できます。
+
+* 手順 *
+
+. を起動します `\https://loadBalanceIP:8443/virtualization/ui/` 導入時に指定したONTAP tools管理者のクレデンシャルをブラウザから使用
+. サイドバーから[vCenters]を選択します。
+. ストレージバックエンドに関連付けるvCenterの縦の省略記号をクリックします。
+. ポップアップのドロップダウンからストレージバックエンドを選択します。
+. vCenterを必要なストレージバックエンドに関連付けるには、*[ストレージバックエンドの関連付け]*オプションを選択します。
++
+を参照してください link:../configure/task_configure_user_role_and_privileges.html["管理者以外のグローバルを対象としたクラスタユーザに必要な最小権限のリスト"]。
+
+

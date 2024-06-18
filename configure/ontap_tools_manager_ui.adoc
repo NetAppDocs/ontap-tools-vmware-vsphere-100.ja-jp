@@ -1,0 +1,33 @@
+---
+permalink: configure/ontap_tools_manager_ui.html 
+sidebar: sidebar 
+keywords: ontap tools manager, managerui 
+summary: ONTAP tools Managerを使用すると、ONTAP tools管理者はより詳細な制御と機能を使用して、アプライアンス、テナント、ストレージバックエンドの全体的な管理を支援できます。 
+---
+= ONTAP Tools Managerユーザインターフェイス
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP Tools for VMware vSphere 10.0は、複数のvCenterを管理するマルチテナントシステムです。管理者は、管理対象のvCenterと、オンボーディングするストレージバックエンドをより細かく制御する必要があります。
+
+ONTAP tools Managerを使用すると、ONTAP tools管理者はより詳細な制御と機能を使用して、アプライアンス、テナント、ストレージバックエンドの全体的な管理を支援できます。
+
+ONTAPツールは次の処理を実行します。
+
+* vCenter管理- ONTAPツールへのvCenterの登録と登録解除
+* ストレージバックエンド管理- ONTAPストレージクラスタをONTAPツールに登録および登録解除し、オンボードされたvCenterにグローバルにマッピングします。
++
+ストレージバックエンドは、ONTAP tools Manager APIまたはCommons APIから追加するとグローバルになり、vCenter APIから追加するとローカルになります。
+例：マルチテナントセットアップでは、ストレージバックエンド（クラスタ）をグローバルに追加し、SVMをローカルに追加してSVMの直接のクレデンシャルを使用できます。
+
+* ログバンドルのダウンロード
+
+
+ONTAP toolsのUIにアクセスするには、 `\https://loadBalanceIP:8443/virtualization/ui/` ブラウザから、導入時に指定したONTAP tools管理者のクレデンシャルを使用してログインします。
+
+image::../media/ontap_tools_manager.png[ONTAP ToolsマネージャのUI]
+
+[今後表示しない]オプションを選択すると、同じブラウザから再度ログインしたときにこのポップアップが表示されなくなります。

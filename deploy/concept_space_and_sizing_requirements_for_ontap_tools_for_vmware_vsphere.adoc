@@ -1,0 +1,112 @@
+---
+permalink: deploy/concept_space_and_sizing_requirements_for_ontap_tools_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: VMware vSphere 用の ONTAP ツールを導入する前に、導入パッケージのスペース要件とホストシステムのいくつかの基本的な要件について理解しておく必要があります。 
+---
+= ONTAP ツールを導入するための要件
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere 用の ONTAP ツールを導入する前に、導入パッケージのスペース要件とホストシステムのいくつかの基本的な要件について理解しておく必要があります。
+
+ONTAPツールは、Windows vCenter ServerまたはVMware vCenter Server Virtual Appliance（vCSA）で使用できます。ESXiシステムを含むサポートされているvSphereにONTAP toolsを導入する必要があります。
+
+* *ノードあたりのインストールパッケージのスペース要件*
++
+** シンプロビジョニング環境の場合は10GB
+** シックプロビジョニングの場合は200GB
+
+
+* *ノードあたりのホストシステムのサイジング要件*
+次の表に、導入サイズおよびノードごとの推奨メモリを示します。
+
+
+|===
+
+
+| 導入のタイプ | CPU | メモリ（GB） 
+
+
+| 小（S） | 8 | 16 
+
+
+| 中（M） | 12 | 24 
+
+
+| 大（L） | 16 | 32だ 
+|===
+
+
+== ストレージとアプリケーションの最小要件：
+
+|===
+| ストレージ、ホスト、およびアプリケーション | バージョン要件 
+
+
+| ONTAP | ONTAP 9.10.1、9.11、9.12、9.13 
+
+
+| VMware vSphere の場合 | サポートされるVMwareの最小バージョンは7.0.3です。 
+
+
+| ESXiホスト | ESXi 7.0.3以降のバージョン 
+
+
+| vCenterサーバ | vCenter 7.0.3 
+
+
+| VASA Provider | 3.0 
+
+
+| OVAアプリケーション | 10.0 
+|===
+サポートされるONTAP、vCenter Server、ESXiホスト、およびプラグインアプリケーションのバージョンの最新情報については、Interoperability Matrix Tool（IMT）を参照してください。
+
+https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["Interoperability Matrix Tool で確認してください"^]
+
+
+
+== 導入に関するその他の考慮事項
+
+導入 ONTAP ツールをカスタマイズするときは、いくつかの要件について考慮する必要があります。
+
+
+
+=== アプリケーションユーザのパスワード
+
+管理者アカウントに割り当てられたパスワードです。セキュリティ上の理由から、パスワードの長さは8~30文字にすることを推奨します。パスワードには、最低1文字の上部、下部、1文字の数字、および特殊文字を使用します。パスワードは90日後に期限切れになります。
+
+
+
+=== アプライアンスのメンテナンスコンソールのクレデンシャル
+
+メンテナンスコンソールにアクセスするには、「 maint 」ユーザ名を使用する必要があります。導入時に「 maint 」ユーザのパスワードを設定できます。パスワードを変更するには、 ONTAP ツールのメンテナンスコンソールの [ アプリケーションの設定 ] メニューを使用します。
+
+
+
+=== vCenter Server の IP アドレス
+
+* ONTAP toolsの登録先のvCenter ServerインスタンスのIPアドレス（IPv4）を指定する必要があります。
++
+生成されるONTAP toolsとVASA証明書のタイプは、導入時に指定したIPアドレス（IPv4）によって異なります。
+
+* vCenter Serverへの登録に使用するONTAP toolsのIPアドレスは、導入ウィザードで入力したvCenter ServerのIPアドレスのタイプ（IPv4）によって異なります。
++
+ONTAPツールとVASA証明書は、vCenter Serverの登録時に使用したものと同じタイプのIPアドレスを使用して生成されます。
+
+* インストール中にVMが移行されていないことを確認します。
++
+
+NOTE: ONTAP tools for VMware vSphere 10.0リリースでは、IPv6はサポートされません。
+
+
+
+
+
+=== アプライアンスのネットワーク・プロパティ
+
+ONTAP toolsの有効なDNSホスト名（非修飾）と静的IPアドレス、およびその他のネットワークパラメータを指定します。ONTAP tools for VMware vSphere 10.0リリースでは、DHCPはサポートされません。これらのパラメータはすべて、適切なインストールと運用のために必要です。

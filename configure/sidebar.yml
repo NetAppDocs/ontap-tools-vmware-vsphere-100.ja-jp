@@ -1,0 +1,24 @@
+---
+section: configure
+title: ONTAP ツールを設定する
+entries:
+- title: ネットワークアクセスの管理
+  url: "/configure/ip_whitelisting.html"
+- title: ユーザロールと権限を設定
+  url: "/configure/task_configure_user_role_and_privileges.html"
+- title: ONTAP Tools Managerユーザインターフェイス
+  url: "/configure/ontap_tools_manager_ui.html"
+- title: vCenterの追加
+  url: "/configure/add_vcenter.html"
+- title: ストレージバックエンドの追加
+  url: "/configure/add_storage_backend.html"
+- title: ストレージバックエンドとvCenterの関連付け
+  url: "/configure/associate_storage_backend.html"
+- title: vCenterを使用したオンボードストレージバックエンド（SVMまたはクラスタ）
+  url: "/configure/onboard_svm.html"
+- title: VASA ProviderをvCenterに登録
+  url: "/configure/register_vasa.html"
+- title: vVolデータストアの作成
+  url: "/configure/create_vvols_datastore.html"
+- title: 登録したSVMの確認
+  url: "/configure/verify_registered_svm.html"

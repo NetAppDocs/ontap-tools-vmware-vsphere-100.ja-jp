@@ -1,0 +1,6 @@
+---
+section: migrate
+title: ONTAPツールの移行
+entries:
+- title: 最新バージョンのONTAP toolsに移行する
+  url: "/migrate/migrate_to_ng.html"

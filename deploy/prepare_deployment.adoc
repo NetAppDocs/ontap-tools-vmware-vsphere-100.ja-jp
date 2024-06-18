@@ -1,0 +1,69 @@
+---
+permalink: deploy/prepare_deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: アプライアンスを使用するには、環境に ONTAP ツールを導入し、必要なパラメータを指定する必要があります。 
+---
+= ONTAP toolsの導入準備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP Tools for VMware vSphereは、VASA Providerを含む複数のvCenter Serverをサポートします。
+
+ONTAP tools for VMware vSphereの導入を開始する前に、ストレージバックエンドの基本要件、アプリケーション要件、およびライセンス要件を確認しておく必要があります。
+VMware vSphere 用の ONTAP ツールを導入する前に、導入計画を作成し、環境で ONTAP ツールをどのように設定するかを決めておくことを推奨します。
+
+
+
+== 導入の準備
+
+導入を進める前のONTAP toolsの要件を次に示します。
+
+* vCenter Server 環境を設定およびセットアップします。
+* _.ova_ファイルをダウンロードします。
+* OVAを導入するホストまたはリソースプールに、* ONTAP toolsの導入要件*に記載されている最小限のリソースがあることを確認してください。
+* ブラウザキャッシュを削除します。
+* ロードバランサとKubernetes APIサーバ用に2つの仮想IPが必要です。導入に使用するVLANで2つの無料IPを取得します。このIPは導入後にサービスにアクセスするために使用されます。
+* CA証明書（ルート証明書、リーフ証明書、中間証明書）を商用CAから取得します。
+* カスタムCA証明書が必須であるvCenterを複数導入する場合は、証明書が発行される*ドメイン名*を*仮想IP *にマッピングします。ドメイン名に対してpingチェックを実行し、ドメインが目的のIPに解決されているかどうかを確認します。
+* NFSを有効にしたONTAP上のStorage VMが必要です。Storage VMを設定するには、次の手順を実行します。
++
+** ONTAPシステムマネージャとONTAP CLIの両方を開いておきます。
+** 新しいStorage VMを作成する場合は、ONTAP System Managerにログインし、NFSを有効にしてStorage VMを作成してください。
+** 100GB以上のアグリゲートを追加してください。
+** アグリゲートが正常に追加されたかどうかを確認します。
++
+a）ONTAP CLIへのログイン
+
++
+b）コマンドvserver show -fields aggr-listを実行します。
+
++
+c）デフォルトのStorage VMにアグリゲートが表示されていない場合は、次のコマンドを実行します。vserver modify < storage VM name >-aggr-list <aggregate name>
+
++
+デフォルトのStorage VMに追加するアグリゲートの名前を確認するには、ONTAP CLIで次のコマンドを使用します。_aggr show_
+
++
+このコマンドを実行すると、ストレージシステム上のアグリゲートのリストが表示され、使用する必要があるアグリゲートの名前が* Aggregate *列に表示されます。
+
+** 導入設定には、クラスタのクレデンシャルとSVMのクレデンシャルまたは直接接続のSVMの2つのオプションがあります。直接接続型SVMの場合は、導入を開始する前に、SVM用の管理LIFを設定する必要があります。クラスタクレデンシャルの場合はスキップしてください。
+** ネットワークルートが存在することを確認し、ONTAP CLIにログインしてnetwork route show -vserver <storage VM name>コマンドを実行します。
++
+存在しない場合は、ONTAP CLIにログインして次のコマンドを実行します。net route create -vserver <vserver name>-destination <destination IP>-gateway <gateway IP>-metric 20
+
+** Storage VMのエクスポートポリシーが存在することを確認してください。ONTAPシステムマネージャで、*[ストレージ]*>*[Storage VM]*>*[ストレージVM名]*>*[設定]*>*[エクスポートポリシー]*の順に選択します。エクスポートポリシーがない場合は、次の手順を実行します。
+** ONTAP CLIで次のコマンドを使用してエクスポートポリシールールを作成する
++
+vserver export-policy rule create -vserver <storage VM name>-policyname <export policy name>-clientmatch <ESXI-IP>-rorule any -rwrule any -superuser any
+
++
+
+NOTE: _superuser_valueがNOT_NONE_でないことを確認してください。
+
+
+
+
