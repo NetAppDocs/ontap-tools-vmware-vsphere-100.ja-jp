@@ -1,6 +1,6 @@
 ---
 indexpage:
-  title: VMware vSphere ドキュメント用の ONTAP ツール
+  title: ONTAP Tools for VMware vSphere 10.0のドキュメント
   summary: VMware vSphere 用の ONTAP ツールを使用すると、 vCenter Server 環境内の仮想データストアを設定、管理、保護できます。
   keywords: ontap, tools, vmware, vsphere, manage, configure, virtual machine, protect,
     enable, datastore

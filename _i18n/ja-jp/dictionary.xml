@@ -818,7 +818,6 @@ APIにはx-authを渡す必要があります。このx-authは、SwaggerのAuth
   <block id="6b50b8836085008a8950ddeafeb7453a" category="list-text">すべてのホストで証明書を更新します。</block>
   <block id="8d1fe487abd8a4fd3b25772f93b38695" category="list-text">しばらくしてからデータストア（DS）および仮想マシン（VM）の処理を実行します。待機時間は、セットアップに含まれるホスト、DS、VMの数によって異なります。待機しないと、操作が断続的に失敗する可能性があります。</block>
   <block id="8f7be3c874feb6ef0fd5f20afd8d5fbb" category="sidebar">VMware vSphere 用の ONTAP ツールを使用すると、 vCenter Server 環境内の仮想データストアを設定、管理、保護できます。</block>
-  <block id="46c4d9bfa1c229940459326940489ab0" category="sidebar">VMware vSphere ドキュメント用の ONTAP ツール</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">はじめに</block>
   <block id="da951ef1610be90b45b31baf7b25b179" category="sidebar">VMware vSphere 向け ONTAP ツールについて説明します</block>
   <block id="3d7fe3e43f9f24fffe5ed0d546d12f13" category="sidebar">ONTAP ツールを導入</block>
@@ -840,4 +839,5 @@ APIにはx-authを渡す必要があります。このx-authは、SwaggerのAuth
   <block id="4226794a7bb33ab0a2309e30c07c9031" category="sidebar">ONTAP ツールを管理します</block>
   <block id="956040396bc93fbe70e3c9e235f5bfdb" category="sidebar">ONTAP ツールのメンテナンスコンソールにアクセスします</block>
   <block id="1fa54bab7f1f7a04eb85d45383a68d04" category="sidebar">最新バージョンのONTAP toolsに移行する</block>
+  <block id="70805c0934ed6aecfa95bd2f05ac18f9" category="sidebar">ONTAP Tools for VMware vSphere 10.0のドキュメント</block>
 </blocks>
