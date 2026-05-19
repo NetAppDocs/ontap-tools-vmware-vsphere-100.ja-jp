@@ -11,4 +11,4 @@ summary: VMware vCenterユーザインターフェイスを使用してVirtual V
 
 
 [role="lead"]
-VMware vCenterユーザインターフェイスを使用してVirtual Volumes（VVol）を管理できます。詳細については、を参照してください https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.storage.doc/GUID-0F225B19-7C2B-4F33-BADE-766DA1E3B565.html["VMware のドキュメント"]。
+VMWare vCenterユーザーインターフェイスを使用して、Virtual Volumes（vVols）を管理できます。詳細については、 https://techdocs.broadcom.com/us/en/vmware-cis/vsphere/vsphere/9-1/vsphere-storage/working-with-virtual-volumes.html#GUID-0F225B19-7C2B-4F33-BADE-766DA1E3B565-en%27["VMware のドキュメント"^]を参照してください。
