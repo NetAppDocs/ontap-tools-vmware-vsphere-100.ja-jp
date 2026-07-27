@@ -18,6 +18,7 @@ VMware vSphere 用の ONTAP ツールを導入する前に、導入計画を作�
 
 
 
+[[preparing-for-deployment]]
 == 導入の準備
 
 導入を進める前のONTAP toolsの要件を次に示します。

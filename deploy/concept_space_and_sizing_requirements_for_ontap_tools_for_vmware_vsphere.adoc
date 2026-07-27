@@ -41,6 +41,7 @@ ONTAPツールは、Windows vCenter ServerまたはVMware vCenter Server Virtual
 |===
 
 
+[[minimum-storage-and-application-requirements]]
 == ストレージとアプリケーションの最小要件：
 
 |===
@@ -70,24 +71,28 @@ https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src
 
 
 
+[[additional-deployment-considerations]]
 == 導入に関するその他の考慮事項
 
 導入 ONTAP ツールをカスタマイズするときは、いくつかの要件について考慮する必要があります。
 
 
 
+[[application-user-password]]
 === アプリケーションユーザのパスワード
 
 管理者アカウントに割り当てられたパスワードです。セキュリティ上の理由から、パスワードの長さは8~30文字にすることを推奨します。パスワードには、最低1文字の上部、下部、1文字の数字、および特殊文字を使用します。パスワードは90日後に期限切れになります。
 
 
 
+[[appliance-maintenance-console-credentials]]
 === アプライアンスのメンテナンスコンソールのクレデンシャル
 
 メンテナンスコンソールにアクセスするには、「 maint 」ユーザ名を使用する必要があります。導入時に「 maint 」ユーザのパスワードを設定できます。パスワードを変更するには、 ONTAP ツールのメンテナンスコンソールの [ アプリケーションの設定 ] メニューを使用します。
 
 
 
+[[vcenter-server-ip-address]]
 === vCenter Server の IP アドレス
 
 * ONTAP toolsの登録先のvCenter ServerインスタンスのIPアドレス（IPv4）を指定する必要があります。
@@ -107,6 +112,7 @@ NOTE: ONTAP tools for VMware vSphere 10.0リリースでは、IPv6はサポー�
 
 
 
+[[appliance-network-properties]]
 === アプライアンスのネットワーク・プロパティ
 
 ONTAP toolsの有効なDNSホスト名（非修飾）と静的IPアドレス、およびその他のネットワークパラメータを指定します。ONTAP tools for VMware vSphere 10.0リリースでは、DHCPはサポートされません。これらのパラメータはすべて、適切なインストールと運用のために必要です。

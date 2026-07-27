@@ -42,6 +42,7 @@ NOTE: vCenter Serverのロールは、管理者ではなく、ONTAP toolsのvCen
 
 
 
+[[key-points-about-assigning-and-modifying-roles-for-vcenter-server]]
 == vCenter Serverのロールの割り当てと変更に関するキーポイント
 
 vCenter Serverのロールは、vSphereのオブジェクトおよびタスクへのアクセスを制限する場合にのみ設定します。それ以外の場合は、管理者としてログインできます。このログインでは、すべての vSphere オブジェクトに自動的にアクセスできます。
@@ -51,6 +52,7 @@ vCenter Serverのロールは、vSphereのオブジェクトおよびタスク�
 
 
 
+[[standard-roles-packaged-with-ontap-tools]]
 == ONTAP ツールに付属の標準ロール
 
 vCenter Serverの権限とRBACを簡単に使用できるように、ONTAP toolsには、ONTAP toolsの主要なタスクを実行できる標準のONTAP toolsロールが用意されています。タスクを実行せずに情報を表示できる読み取り専用ロールもあります。
@@ -85,6 +87,7 @@ Manager UI管理者ロールがvCenterに登録されていません。このロ
 
 
 
+[[permissions-for-ontap-storage-backends-and-vsphere-objects]]
 == ONTAPストレージバックエンドとvSphereオブジェクトの権限
 
 十分なvCenter Serverアクセス許可がある場合、ONTAP toolsは次に、ストレージバックエンドのクレデンシャル（ユーザ名とパスワード）に関連付けられているONTAP RBAC権限（ONTAPロール）を確認します。 そのストレージバックエンドでONTAP toolsタスクに必要なストレージ処理を実行するための十分な権限があるかどうかを確認する。適切なONTAP権限があれば、

@@ -25,6 +25,7 @@ ONTAP Tools for VMware vSphereは次のコンポーネントで構成されて�
 
 
 
+[[ontap-tools-vasa-provider]]
 == ONTAP Tools VASA Provider
 
 ONTAP tools VASA Providerは、仮想ボリューム（VVOL）の拡張性に関する高度な要件をサポートしています。NFSプロトコル、iSCSIプロトコル、OVA環境をサポートしています。

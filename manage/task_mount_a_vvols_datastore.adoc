@@ -40,6 +40,7 @@ vCenterからVVolデータストアMORefを取得します。
 ----
 
 
+[[examples]]
 == 例
 
 * 追加ホストにマウント

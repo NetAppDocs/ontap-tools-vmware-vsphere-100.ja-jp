@@ -20,12 +20,14 @@ ONTAP Tools for VMware vSphereはvCenter Serverプラグインで、ONTAPツー�
 
 
 
+[[preparing-for-installation]]
 == 設置を準備しています
 
 このプラグインを仮想アプライアンスとして導入することで、各製品を別々にインストールして vCenter Server に登録する手間を減らすことができます。
 
 
 
+[[deployment-requirements]]
 === 導入の要件
 
 ONTAP tools for VMware vSphereを導入する前に、導入パッケージのスペース要件とホストシステムのいくつかの基本的な要件を理解しておく必要があります。
@@ -58,6 +60,7 @@ ONTAPツールは、Windows vCenter ServerまたはVMware vCenter Server Virtual
 |===
 
 
+[[minimum-storage-and-application-requirements]]
 == ストレージとアプリケーションの最小要件：
 
 |===
@@ -85,6 +88,7 @@ ONTAPツールは、Windows vCenter ServerまたはVMware vCenter Server Virtual
 
 
 
+[[ontap-tools-requirements]]
 === ONTAP ツールの要件
 
 * vCenter Server 環境を設定およびセットアップします。
@@ -97,6 +101,7 @@ ONTAPツールは、Windows vCenter ServerまたはVMware vCenter Server Virtual
 
 
 
+[[deploying-ontap-tools]]
 == ONTAP ツールの導入
 
 .手順

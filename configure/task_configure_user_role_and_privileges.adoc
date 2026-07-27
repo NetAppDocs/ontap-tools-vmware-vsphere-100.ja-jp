@@ -50,6 +50,7 @@ NOTE: アンインストール処理では、ONTAPツールのロールは削除
 
 
 
+[[svm-aggregate-mapping-requirements]]
 == SVMアグリゲートのマッピングの要件
 
 データストアのプロビジョニングに直接SVMのクレデンシャルを使用するために、内部ONTAPツールは、データストアのPOST APIで指定されたアグリゲートにボリュームを作成します。ONTAPでは、直接のSVMクレデンシャルを使用して、マッピングされていないアグリゲートにボリュームを作成することはできません。この問題を解決するには、ここで説明するREST APIまたはCLIを使用してSVMとアグリゲートをマッピングする必要があります。
@@ -68,6 +69,7 @@ sti115_vsim_ucs630f_aggr1 vserver show-aggregates                               
 ----
 
 
+[[create-ontap-user-and-role-manually]]
 == ONTAPのユーザとロールを手動で作成する
 
 このセクションの手順に従って、JSONファイルを使用せずにユーザとロールを手動で作成します。
@@ -99,6 +101,7 @@ sti115_vsim_ucs630f_aggr1 vserver show-aggregates                               
 
 
 
+[[list-of-minimum-privileges-required-for-non-admin-global-scoped-cluster-user]]
 == 管理者以外のグローバルを対象としたクラスタユーザに必要な最小権限のリスト
 
 このセクションには、users JSONファイルを使用せずに作成された管理者以外のグローバル対象のクラスタユーザに必要な最小権限を記載します。
